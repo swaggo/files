@@ -2,6 +2,10 @@ pkg: swaggerFiles
 
 dest: "./"
 
+compression:
+  compress: true
+  keep: false
+
 fmt: true
 
 spread: true
