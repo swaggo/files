@@ -48,6 +48,13 @@ func init() {
 
 }
 
+func NewHandler() *webdav.Handler{
+	return &webdav.Handler{
+		FileSystem: FS,
+		LockSystem: webdav.NewMemLS(),
+	}
+}
+
 // Open a file
 func (hfs *HTTPFS) Open(path string) (http.File, error) {
 	path = hfs.Prefix + path
