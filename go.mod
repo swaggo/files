@@ -1,4 +1,4 @@
-module github.com/rhaist/files
+module github.com/swaggo/files
 
 go 1.15
 
