@@ -13,7 +13,10 @@ jobs:
         go-versions: [ '1.16.x', '1.17.x', '1.18.x' ]
     runs-on: ubuntu-latest
     steps:
+      - steps:
       - uses: actions/checkout@master
+        with:
+          submodules: recursive
       - name: Set up Go
         uses: actions/setup-go@v1
         with:
