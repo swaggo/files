@@ -5,7 +5,7 @@ import (
 	"io/fs"
 )
 
-//go:embed swagger-ui/dist/*
+//go:embed dist/*
 var dist embed.FS
 
 // FS holds embedded swagger ui files
