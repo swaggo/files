@@ -9,4 +9,4 @@ import (
 var dist embed.FS
 
 // FS holds embedded swagger ui files
-var FS, _ = fs.Sub(dist, "swagger-ui/dist")
+var FS, _ = fs.Sub(dist, "dist")

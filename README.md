@@ -5,5 +5,5 @@
 
 Generate swagger ui embedded files by using:
 ```
-	git submodule update --init --recursive
+	make
 ```
