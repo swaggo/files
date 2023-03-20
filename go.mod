@@ -1,5 +1,3 @@
-module github.com/swaggo/files
+module github.com/swaggo/files/v2
 
 go 1.16
-
-require golang.org/x/net v0.7.0
