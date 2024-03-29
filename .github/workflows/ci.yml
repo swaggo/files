@@ -1,24 +1,22 @@
-name: build
+---
+name: CI
+permissions:
+  contents: write
+  packages: write
+  statuses: write
+  issues: read
+  checks: write
+  pull-requests: write
+  id-token: write
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - main
   pull_request:
-    branches: [ master ]
+    types: [ opened, synchronize, reopened ]
 
 jobs:
-  test:
-    strategy:
-      matrix:
-        go-versions: [ '1.16.x', '1.17.x', '1.18.x' ]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Set up Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: ${{ matrix.go-versions }}
-      - name: test
-        run: go test -coverprofile=coverage.txt -covermode=atomic
-      - name: coverage
-        run: bash <(curl -s https://codecov.io/bash)
+  ci:
+    uses: "Traive-Finance/workflow-template/.github/workflows/golang-pkg-ci.yml@main"
+    secrets: inherit
