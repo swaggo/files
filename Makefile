@@ -13,13 +13,12 @@ update-submodule: init
 	@echo "Latest tag for swagger-ui: $(LATEST_TAG)"
 	# Checkout the latest tag
 	cd swagger-ui && git checkout $(LATEST_TAG)
-	# Add and commit the submodule update
-	git add swagger-ui
-	@echo "Creating commit with latest tag for swagger-ui: ${LATEST_TAG}"
-	git commit -m "Update submodule swagger-ui to latest tag: ${LATEST_TAG}"
+	@echo "Updated submodule swagger-ui to latest tag: ${LATEST_TAG}"
+
+.PHONY: clean
+clean:
+	rm -rf dist/*
 
 .PHONY: build
-build:
-	rm -rf dist/*
+build: clean
 	cp -r swagger-ui/dist/* dist/
-
