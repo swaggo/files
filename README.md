@@ -6,11 +6,11 @@
 ## How to update submodule and create a new bundle:
 
 ```console
-	# Update submodule to latest tagged release of swagger-ui
-	make update-submodule
+# Update submodule to latest tagged release of swagger-ui
+make update-submodule
 
-	# Create new dist bundle
-	make build
-
-	# You can now create a commit and push changes to GitHub
+# Create new dist bundle
+make build
 ```
+
+You can now create a commit and push changes to GitHub
